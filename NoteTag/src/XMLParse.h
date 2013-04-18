@@ -12,17 +12,22 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <queue>
 
 using namespace std;
 
 class XMLParse{
 private:
 	ifstream inputFile; //input file stream... duh
+	queue<string> tags;
+	queue<string> data;
 
 public:
 	XMLParse(string inFileName);
 	string getNextTag();
 	bool isInputFileOpen();
+	bool parse();
+	void outData();
 
 
 };
