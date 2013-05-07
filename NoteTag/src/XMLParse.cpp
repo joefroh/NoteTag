@@ -22,7 +22,7 @@ string XMLParse::getNextTag() {
 }
 
 bool XMLParse::parse() {
-	notes = queue<Note>();
+	notes = vector<Note>();
 	read();
 
 	return true;
@@ -38,22 +38,22 @@ void XMLParse::outData() {
 	int loopEnd = notes.size();
 	cout << "size: " << loopEnd << endl;
 	for (int i = 0; i < loopEnd; i++) {
-		cout << "tag: " << notes.front().getTag() << endl;
-		cout << "data: " << notes.front().getNote() << endl;
-		notes.pop();
+		cout << "tag: " << notes.at(i).getTag() << endl;
+		cout << "data: " << notes.at(i).getNote() << endl;
+		//notes.pop();
 	}
 }
 
 void XMLParse::readTag() {
 	stringstream tag;
-	notes.push(Note());
+	notes.push_back(Note());
 	char currChar = 0;
 
 	while (inputFile.peek() != '>' && inputFile.get(currChar)) { //implicit check for EOF
 			tag << currChar;
 	}
 	notes.back().setTag(tag.str());
-	cout << tag.str();
+	//cout << tag.str();
 }
 
 void XMLParse::read() {
@@ -78,7 +78,7 @@ void XMLParse::readData() {
 			datum << currChar;
 	}
 	notes.back().setNote(datum.str());
-	if (datum.str().length() != 0)
-		cout << datum.str();
+	//if (datum.str().length() != 0)
+		//cout << datum.str();
 
 }

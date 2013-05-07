@@ -20,7 +20,7 @@ using namespace std;
 class XMLParse{
 private:
 	ifstream inputFile; //input file stream... duh
-	queue<Note> notes;
+	vector<Note> notes;
 	void readTag();
 	void read();
 	void readData();
