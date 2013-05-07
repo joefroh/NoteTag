@@ -10,5 +10,6 @@
 int main(){
 	XMLParse parser("testFiles/testFile2");
 	parser.parse();
+	parser.outData();
 }
 
