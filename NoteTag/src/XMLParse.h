@@ -13,14 +13,17 @@
 #include <string>
 #include <sstream>
 #include <queue>
+#include "Note.h"
 
 using namespace std;
 
 class XMLParse{
 private:
 	ifstream inputFile; //input file stream... duh
-	queue<string> tags;
-	queue<string> data;
+	queue<Note> notes;
+	void readTag();
+	void read();
+	void readData();
 
 public:
 	XMLParse(string inFileName);
