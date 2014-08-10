@@ -1,0 +1,17 @@
+A note taking program that will reflow your notes after a class based on free form tagging
+
+e.g.
+
+<def> Puzzle: a type of thing people solve</def>
+<code> cout<<endl </code>
+
+this would allow people who are just typing their notes to mark them up and organize them
+I have weird ideas when i dont want to be studying.
+
+May 7:
+Decided to explore prototype using implicit data end, meaning that a tag ends when a new tag is read
+
+e.g.
+
+<def> Puzzle: a type of thing people solve
+<date> May 7th 2013 - the day i decided to use implicit tags
