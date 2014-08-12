@@ -15,7 +15,8 @@ XMLParse::XMLParse(string inFileName) :
 }
 
 /*
- * Currently will only work with line delimited tags (eg the tag is first on its line)
+ * Currently will only work with line delimited tags
+ * (eg the tag is first on its line)
  */
 string XMLParse::getNextTag() {
 	return notes.front().getTag();
