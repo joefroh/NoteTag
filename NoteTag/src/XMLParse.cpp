@@ -28,6 +28,7 @@ bool XMLParse::parse() {
 
 	return true;
 }
+
 /*
  * is the input file open?
  */
@@ -59,7 +60,9 @@ void XMLParse::readTag() {
 
 void XMLParse::read() {
 	char currChar;
-	while(inputFile.get(currChar)) { //imnplicit check for EOF
+	while(inputFile.get(currChar)) 
+	{ //imnplicit check for EOF
+	
 		switch (currChar) {
 		case '<': //handle a tag
 			readTag();
@@ -75,8 +78,9 @@ void XMLParse::read() {
 void XMLParse::readData() {
 	char currChar;// = 0;
 	stringstream datum;
-	while (inputFile.peek() != '<' && inputFile.get(currChar)) { //implicit check for EOF
-			datum << currChar;
+	while (inputFile.peek() != '<' && inputFile.get(currChar)) 
+	{ //implicit check for EOF
+		datum << currChar;
 	}
 	notes.back().setNote(datum.str());
 	//if (datum.str().length() != 0)
